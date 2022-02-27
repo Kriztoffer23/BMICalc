@@ -1,0 +1,226 @@
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> BMI Calculator</title>
+    </head>
+        <style media="screen">
+            body{
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                background-image: linear-gradient(110deg, #0b8570d0, #0b8570d0);
+                min-height: 100vh;            
+            }
+            div{
+                height: -100px;
+                width: 100px;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                background-image: linear-gradient(3deg, #09b803, #fc2205);
+                transform: translate(60%, 110%);
+                padding: 10px;
+                border-radius: 1px;
+                box-shadow: 1px 1px 20px #000000;
+            }
+            div4{
+                height: -100px;
+                width: 100px;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                background-image: linear-gradient(5deg,#f5d104, #09b803);
+                transform: translate(60%, 215%);
+                padding: 10px;
+                border-radius: 1px;
+                box-shadow: 1px 1px 20px #000000;
+            }
+            div5{
+                height: -100px;
+                width: 100px;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                background-image: linear-gradient(5deg,#f70808, #f5d104);
+                transform: translate(60%, 319%);
+                padding: 10px;
+                border-radius: 1px;
+                box-shadow: 1px 1px 20px #000000;
+            }
+            div6{
+                height: -100px;
+                width: 100px;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                background-image: linear-gradient(-3deg,#ff0000,#ff0000);
+                transform: translate(60%, 423%);
+                padding: 10px;
+                border-radius: 1px;
+                box-shadow: 1px 1px 20px #000000;
+            }
+
+            div2{
+                height: -100px;
+                width: 450px;
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                background-color: rgb(247, 155, 17);
+                transform: translate(75%, 25%);
+                padding: 10px;
+                border-radius: 1px;
+                box-shadow: 1px 1px 20px #000000;
+            }
+            div3{
+                height: -100px;
+                width: 200px;
+                position: absolute;
+                top: 1%;
+                right: -15%;
+                background-color:rgb(247, 155, 17);
+                transform: translate(-190%, 25%);
+                padding: 10px;
+                border-radius: 2px;
+                box-shadow: 1px 1px 20px #451757;
+            }
+            
+            h1{
+                font-size: 40px;
+                font-weight: 500;
+            }
+            h2{
+            font-size: 30px;
+            font-weight: 600;
+            }
+            h3{
+            font-size: 20px;
+            font-weight: 600;
+            }
+            .text{
+                text-align: left;
+                margin-left: 150x;
+            }
+            #w, #h, #n{
+                color: #000000;
+                text-align: left;
+                font-size: 20px;
+                font-weight: 200;
+                outline: none;
+                border: none;
+                background: none;
+                border-bottom: 1px solid #0d0b13;
+                width: 200px;
+            }
+            #t{
+                color: #000000;
+                text-align: center;
+                font-size: 18px;
+                font-weight: 100;
+                outline: none;
+                border: 3px solid #000000;
+                background: none;
+                border-bottom: 2px solid #0d0b13;
+                width: 200px;
+            }
+             #w:focus, #h:focus, #n:focus #t:focus{
+                border-bottom: 2px solid #1f9791;
+                width: 300px;
+                transition: 0.5s;
+            }
+
+             #result{
+                color: #000000;
+            }
+            #btn{
+                font-family: inherit;
+                margin-top: 10px;
+                border: none;
+                color: #fff;
+                background-image: linear-gradient(120deg, #000000, #000000);
+                width: 150px;
+                padding: 10px;
+                border-radius: 30px;
+                outline: none;
+                cursor: pointer;
+            }
+            #btn:hover{
+                box-shadow: 1px 1px 10px #341f97;
+            }
+            #info{
+                font-size: 12px;
+                font-family: inherit; 
+            }
+                
+            </style>
+            
+            <script type="text/javascript">
+                function BMI() {
+                    var n=document.getElementById('n'). value;
+                    var h=document.getElementById('h'). value;
+                    var w=document.getElementById('w'). value;
+                    var bmi=w/(h/100*h/100);
+                    var bmio=(bmi.toFixed(2));
+
+                    document.getElementById("result").innerHTML= n + " your BMI is " + bmio + "!!";
+                    document.getElementByid("res").innerHTML= n + "'s BMI is " + bmio
+
+                }
+     </script>     
+     <br>  
+     <div>
+        <p>Underweight= 0kg/m² - 17kg/m²</p>
+     </div>              
+     <div4>
+        <p>Normal= 18kg/m² - 25kg/m²</p>
+     </div4>
+     <div5>
+        <p>Overwieght= 25kg/m² - 35kg/m²</p>
+     </div5>
+     <div6>
+        <p> Obesity= 35kg/m² - 45kg/m²</p>
+     </div6>
+     <div0>
+        <h1> BMI Calculator App UI</h1>
+     </div0>
+
+    <div2>
+        <br>
+        <h2> BMI Calculator </h2>
+        <p class="text">Name</p>
+        <input type="text" id="n">
+        <p class="text">Height(cm)</p>
+        <input type="text" id="h">
+        <p class="text">Weight(kg)</p>
+        <input type="text" Id="w">
+        <p id="result">Enter Your BMI</p>
+        <button id="btn" onClick="BMI()">See Result</button>
+        <p id="info"> Please Enter Height [cm] and weight [Kg] </p>
+    </div2>
+    <div3>
+        <h3> Recent results of BMI </h3>
+              <tr>
+            <td>Day 1</td>
+            <input type = "result" Id = "t">
+            <td>Day 2</td>
+            <input type = "result" Id = "t">
+            <td>Day 3</td> 
+            <input type = "result" Id = "t">
+            <td>Day 4</td> 
+            <input type = "result" Id = "t">
+            <td>Day 5</td>
+            <input type = "result" Id = "t">
+            <td>Day 6</td>
+            <input type = "result" Id = "t">
+            <td>Day 7</td>
+            <input type = "result" Id = "t">
+            <p id="info"> Manually record your result </p>
+   
+        </tr>
+    </div3>
+
+   
+    </body>
+    </html>
